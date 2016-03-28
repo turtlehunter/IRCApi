@@ -53,7 +53,7 @@ public class EventManager {
                 pars = new String[]{};
             }
             for(Map.Entry<Method, Command> entry: commands.entrySet()) {
-                if(entry.getValue().value().contains(args[0].substring(1))) {
+                if(entry.getValue().value().toLowerCase().equals(args[0].substring(1))) {
                     try {
                         entry.getKey().invoke(entry.getKey().getDeclaringClass().newInstance(), event, pars);
                     } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
