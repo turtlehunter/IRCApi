@@ -44,6 +44,8 @@ public class EventManager {
     }
 
     public static void onMessage(OnPrivmsg event) {
+        if(event.msg.equals(commandPrefix)
+            return; //fixed
         if(event.msg.startsWith(commandPrefix)) {
             String[] args = event.msg.split(" ");
             String[] pars;
@@ -65,6 +67,8 @@ public class EventManager {
     }
 
     public static void onMessage(OnNotice event) {
+        if(event.msg.equals(commandPrefix)
+            return; //fixed
         if(event.msg.startsWith(commandPrefix)) {
             String[] args = event.msg.split(" ");
             String[] pars;
